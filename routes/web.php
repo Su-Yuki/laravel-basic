@@ -21,6 +21,6 @@ Route::get("hello/other", "HelloController@other");
 Route::get("hello/request", "HelloController@request");
 
 // section2
-Route::get("hello/index", function(){
-    return view("hello.index");
-});
+Route::get("hello/index/{id?}", "HelloController@helloIndex");
+Route::get("hello/index2", "HelloController@index2");
+Route::post("hello/post", "HelloController@post");

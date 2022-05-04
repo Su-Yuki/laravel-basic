@@ -89,4 +89,42 @@ class HelloController extends Controller
     . $end;
   return $html;
   }
+
+  public function helloIndex(Request $request) {
+    $data = [
+        "msg" => "これはコントローラから渡されたメッセージです。",
+        "id"  => $request->id
+    ];
+    return view("hello.index", $data);
+  }
+
+  public function post(Request $request) {
+    $data = [
+      "one",
+      "two",
+      "three",
+      "for",
+      "five"
+    ];
+
+    return view("hello.index", [
+        "msg"  => $request->msg,
+        "data" => $data
+    ]);
+  }
+
+  public function index2() {
+    $data = [
+      ["name" => "山田", "mail" => "sample@example.com"],
+      ["name" => "鈴木", "mail" => "sample@example.com"],
+      ["name" => "佐藤", "mail" => "sample@example.com"],
+      ["name" => "富田", "mail" => "sample@example.com"],
+      ["name" => "村田", "mail" => "sample@example.com"]
+    ];
+
+    return view("hello.index2", [
+        "data"    => $data,
+        "message" => "Hello!"
+    ]);
+  }
 }
