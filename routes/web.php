@@ -15,6 +15,12 @@ Route::get('/', function () {
   return view('welcome');
 });
 
+// section1
 Route::get("hello", "HelloController@index");
 Route::get("hello/other", "HelloController@other");
 Route::get("hello/request", "HelloController@request");
+
+// section2
+Route::get("hello/index", function(){
+    return view("hello.index");
+});
