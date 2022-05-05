@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\HelloMiddleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +26,11 @@ Route::get("hello/request", "HelloController@request");
 Route::get("hello/index/{id?}", "HelloController@helloIndex");
 Route::get("hello/index2", "HelloController@index2");
 Route::post("hello/post", "HelloController@post");
+
+// section3
+Route::get("hello/index3", "HelloController@index3")->middleware("helo");
+Route::get("hello/index4", "HelloController@index4")->middleware("helo");
+Route::post("hello/index4", "HelloController@post_validate");
+
+Route::get("hello/index5", "HelloController@index5")->middleware("helo");
+Route::post("hello/index5", "HelloController@post_validate2");
